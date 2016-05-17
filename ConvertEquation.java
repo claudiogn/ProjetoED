@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Parser;
 
 /**
  *
@@ -17,7 +16,8 @@ public class ConvertEquation {
 	int qtdColunas = 0;
 	
 	public ConvertEquation(String equation) {
-		this.equation = equation.toUpperCase();
+		this.equation = equation.toUpperCase(); // para ficar maiusculo cara de chibata
+		System.out.println(this.equation);
                 this.equation= equation + ' ';// isso aqui é pq quando tinha "A+C", ele setava x no C
 		
 		for (int i = 0; i < colunas.length; i++) {
@@ -41,25 +41,25 @@ public class ConvertEquation {
 		for (int i = 0; i < equation.length(); i++) {
 			
                     
-                        if(equation.charAt(i) == 'A')
+            if(equation.charAt(i) == 'A')
 				colunas[0] = true;
 			if(equation.charAt(i) == 'B'){                            
 				colunas[0]=true;
-                                colunas[1] = true;
-                        }
+                colunas[1] = true;
+            }
 			if(equation.charAt(i) == 'C'){
 // se eu nao botasse esses outros true, se eu tivesse "C" por exemplo, a matriz so ia ter
 //uma linha, mas na hora de setar no metodo analise, ele setaria na coluna 3, logo daria erro
 				colunas[0]=true;
-                                colunas[1] = true;
-                                colunas[2] = true;
-                        }
+                colunas[1] = true;
+                colunas[2] = true;
+		    }
 			if(equation.charAt(i) == 'D'){
 				colunas[0]=true;
-                                colunas[1] = true;
-                                colunas[2] = true;
-                                colunas[3] = true;
-                        }
+                colunas[1] = true;
+                colunas[2] = true;
+                colunas[3] = true;
+        	}
 		}
 		for (int i = 0; i < colunas.length; i++) {
 			if(colunas[i] == true){
@@ -79,13 +79,12 @@ public class ConvertEquation {
 	}
 	
 	public char[][] analise(){
-		RelationMatrix m = new RelationMatrix(qtdLinhas, qtdColunas, true);
+		RelationMatrix m = new RelationMatrix(qtdLinhas, qtdColunas);
 		int l = 0;
 		for (int i = 0; i < equation.length(); i++) {
 			if(equation.charAt(i) == '+')
 				l++;
-			
-			switch (equation.charAt(i)) {
+			switch (equation.toUpperCase().charAt(i)) {
 				case 'A':
 					caractere(m,'A',0,i,l);
 					break;

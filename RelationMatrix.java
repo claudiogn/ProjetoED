@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Parser;
 
 /**
  *
@@ -15,12 +14,6 @@ public class RelationMatrix {
 	private char[][] matrix;
 	
 	public RelationMatrix(int linhas, int colunas) {
-		this.linhas = linhas;
-		this.colunas = colunas;
-		setMatrix(new char[linhas][colunas]);
-	}
-	
-	public RelationMatrix(int linhas, int colunas, boolean preencher) {
 		this.linhas = linhas;
 		this.colunas = colunas;
 		setMatrix(new char[linhas][colunas]);
