@@ -36,6 +36,6 @@ public class RelationMatrix {
 	public void setDados(int i, int j, char dado){
 		matrix[i][j] = dado;
 	}
-	
+
 	
 }
