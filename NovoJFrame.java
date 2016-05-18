@@ -80,6 +80,16 @@ public class NovoJFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    /*
+    No próximo método é executada a ação do botão da interface.
+    Ele captura a string digitada e manda como parâmetro para o metodo run da classe principal
+    O método run é responsável por inicializar a matriz, inializar o processo de setagem dela
+    e imprimir
+    */
+    
+    
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         String eq= txtEq.getText();
